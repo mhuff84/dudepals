@@ -2,11 +2,9 @@ var express = require('express');
 var router = express.Router();
 var db = require('../db.js')
 
-
 router.get('/', function(req, res, next){
 	  db.getMessages(function(messages){
-	  	console.log(messages.length)
-	  	res.render('index', { title: 'Express', messages: messages });
+	  	res.render('messages', { title: 'Express', messages: messages });
 	  });
 	})	
 	.post('/', function(req, res, next){

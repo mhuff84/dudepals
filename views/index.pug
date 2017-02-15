@@ -4,12 +4,4 @@ block content
   h1= title
   p Welcome to #{title}
 
-  form(method='post',action='/')
-    input(type='text',name='message')
-    input(type='button',id='send',value='send')
-
-  .messages
-    each m, i in messages
-      span(style={display:'block',width:'100%'})=m.text + '-' + m.timestamp
-
-  script(src='./javascripts/index.js')
+  <a href='/messages'>Go to Messages</a>

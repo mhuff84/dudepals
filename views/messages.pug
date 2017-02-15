@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  form(method='post',action='/messages')
+    input(type='text',name='message')
+    input(type='button',id='send',value='send')
+
+  .messages
+    each m, i in messages
+      span(style={display:'block',width:'100%'})=m.text + '-' + m.timestamp
+
+  script(src='./javascripts/messages.js')
