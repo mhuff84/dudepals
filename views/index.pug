@@ -1,7 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
 
-  <a href='/messages'>Go to Messages</a>
+  .groups
+    each g, i in data
+      span(style={display:'block',width:'100%'})=m.name + '-' + m.lastUpdated
+
+  script(src='index.js')
