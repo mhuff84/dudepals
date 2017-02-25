@@ -1,9 +1,28 @@
 extends layout
 
+block scripts
+  script(src='index.js')
+
+
 block content
 
-  .groups
-    each g, i in data
-      span(style={display:'block',width:'100%'})=m.name + '-' + m.lastUpdated
+  .row
+    .col-xs-8
+      .header=Dudepals
+      ul
+        each g, i in groups
+          li
+            .group
+              .list-icon
+                i.icon-comments-alt.icon-2
+              .list-title
+                span.span2=g.name
+                i.span2=g.description
+              .list-stats
+              .list-meta
+            
 
-  script(src='index.js')
+  form(method='post',action='/save',style={width:'200px'})
+    input(type='text',name='name',style={display:'block'})
+    textarea(name='description', style={display:'block'})
+    input(type='button',id='send',value='send')

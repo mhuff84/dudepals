@@ -1,0 +1,117 @@
+body
+{
+	background-color:#f0f0f0;
+	font-family:'Roboto', sans-serif;
+}
+
+ul
+{
+	margin-left:0px;
+}
+
+li
+{
+	list-style:none;
+}
+
+.topic-icon
+{
+	float:left;
+	
+}
+
+.container
+{
+	padding-top: 30px;	
+}
+
+.group, .header
+{
+	height:75px;
+	border:1px solid #e9e9e9;
+}
+
+.group
+{
+	background-color:#fff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
+}
+
+.group .list-icon
+{
+	float: left;
+    margin: 15px 0 0 15px;
+/*    color: #ff6c2c;
+    border: 1px solid #ff6c2c;*/
+    line-height: 24px;
+    text-align: center;
+    -webkit-transition: color .25s ease, background-color .25s ease-in-out;
+    transition: color .25s ease, background-color .25s ease-in-out;
+
+}
+
+.group .list-title
+{
+	float:left;
+	margin:15px 0 0 15px;
+}
+
+.group .list-stats
+{
+
+}
+
+.group .list-meta
+{
+
+}
+
+
+
+/*.group span
+{
+	display:block;
+	font-size:18pt;
+	margin-top:10px;
+	float:left;
+}*/
+
+/*.group i
+{
+	float:left;
+	display: block;
+	clear:both;
+}
+
+.group i.icon
+{
+	margin-top:15px;
+}*/
+
+.header
+{
+	background-color:#536482;
+}
+
+/* FONT-AWESOME CONFIG */
+.icon-2
+{
+	font-size: 3em;
+}
+
+.icon-3
+{
+	font-size: 4em;	
+}
+
+.icon-4
+{
+	font-size: 8em;		
+}
+
+.icon-5
+{
+	font-size: 12em;		
+}

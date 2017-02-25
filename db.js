@@ -45,6 +45,10 @@ db.saveTopicGroup = function(topicGroup, callback){
 		topicGroup.lastUpdated = now;
 		topicGroup.created = now;
 
+		//remove me
+		topicGroup.lastUpdatedBy = 'huffdad';
+		topicGroup.createdBy = 'huffdad';
+
 		r.table('topicGroups').insert(topicGroup).run(connection, function(err, result){
 			if (err) throw err;
 
@@ -109,7 +113,7 @@ db.saveTopic = function (topic, callback) {
 
 			var group = db.getTopicGroup(topic.groupId);
 
-			group.update({ topics = parseInt(group.topics + 1) }).run(connection, function(err, result) {
+			group.update({ topics: parseInt(group.topics + 1) }).run(connection, function(err, result) {
 				if (err) throw err;
 			});
 
@@ -172,12 +176,12 @@ db.savePost = function(post, callback){
 
 			var topic = db.getTopic(post.topicId);
 
-			topic.update({ posts = parseInt(topic.posts + 1) }).run(connection, function(err, result){
+			topic.update({ posts: parseInt(topic.posts + 1) }).run(connection, function(err, result){
 				if (err) throw err;
 
 				var group = db.getTopicGroup(topic.groupId);
 
-				group.update({ topics = parseInt(group.topics + 1), posts = parseInt(group.posts + 1) }).run(connection, function(err, result) {
+				group.update({ topics: parseInt(group.topics + 1), posts: parseInt(group.posts + 1) }).run(connection, function(err, result) {
 					if (err) throw err;
 				});				
 			});		

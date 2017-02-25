@@ -6,14 +6,17 @@ router.get('/', function(req, res, next) {
   db.getTopicGroups(null, function(data){
   	res.render('index', { groups: data });
   });
-}).get('/:id', function(req, res next) {
+}).get('/:id', function(req, res, next) {
 	var id = req.params.id;
 
 	res.render('groupEdit', { group: db.getTopicGroup(id) })
 }).post('/save', function(req, res, next) {
 	var group = req.body;
 
-	db.saveTopicGroups(group function(record){
+	console.log('hit controller');
+
+	db.saveTopicGroup(group, function(record){
+		console.log('save complete');
 		res.render('group', { group: record });
 	});
 });

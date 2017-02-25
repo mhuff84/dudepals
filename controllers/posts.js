@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
   db.getPosts(function(data){
   	res.render('posts', { data: data });
   });
-}).get('/:id', function(req, res next) {
+}).get('/:id', function(req, res, next) {
 	var id = req.params.id;
 
 	//get topics
